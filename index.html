@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/fonts.css" />
     <!-- <link  rel="stylesheet" href="/assets/fontawesome/css/fontawesome.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+      src="https://kit.fontawesome.com/c72894d93b.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/css/style.css" />
 
     <title>my Tapsi work</title>
@@ -17,12 +20,55 @@
         <h2>ارتباط با ما</h2>
         <p>شما می توانید، نظرات و انتقادات خود را برای ما بفرستید</p>
       </div>
-      <div class="contact-us__social-media">
-        <i class="fa fa-facebook-square"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-whatsapp"></i>
+
+      <div class="contact-us__info">
+        <div class="contact-us__social-media">
+          <i class="fa fa-facebook-square"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-whatsapp"></i>
+        </div>
+        <div class="contact-us__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25595.70267787873!2d51.23060706883524!3d36.68741448262918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8c040fac64b921%3A0x9bcdd980cb5be094!2sKelarabad%2C%20Mazandaran%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1651072311109!5m2!1sen!2s"
+            width="700"
+            height="350"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="contact-info__address">
+          <div class="contact-us__info-address-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h5>ایران، مازندران، خیابان ایکس ، کوی وای ، پلاک 20</h5>
+          </div>
+          <div class="contact-us__info-address-item">
+            <i class="fas fa-mobile-alt"></i>
+            <h5>(833) 555-0130</h5>
+          </div>
+          <div class="contact-us__info-address-item">
+            <i class="fas fa-envelope-square"></i>
+            <h5>susan1000@gmail.com</h5>
+          </div>
+        </div>
       </div>
-      <div class="contact-us__form" style="background-color: rgb(209, 24, 49);height: 100px;"></div>
+      <div class="contact-us__form">
+        <h3 class="contact-us__form-title">Contact Us</h3>
+        <form action="">
+          <input type="text" id="user-name" placeholder="Enter Your Name" />
+          <input type="text" id="user-email" placeholder="Enter Your Email" />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+          ></textarea>
+          <input type="submit" value="Submit" class="btn btn--primary" />
+        </form>
+      </div>
     </section>
   </body>
 </html>
