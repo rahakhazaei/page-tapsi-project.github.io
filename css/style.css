@@ -437,6 +437,12 @@ h3 {
         background-color: #F5F5F5;
     }
 
+    ::placeholder {
+        font-size: 1.2rem;
+        color:#333;
+        font-family: "iranyekan";
+    }
+
     .contact-us__form textarea {
         width: 100%;
         outline: 0;
@@ -444,7 +450,7 @@ h3 {
         border: 1px solid #E8E8E8;
         padding: 1.9rem 2rem;
         text-align: left;
-
+        resize: none;
     }
 
     .contact-us__form .btn {
@@ -497,5 +503,136 @@ h3 {
             display: flex;
             justify-content: center;
             margin: 6rem;
+        }
+
+        .contact-us__form textarea {
+            padding: 1.2rem 1.5rem;
+        }
+    }
+
+    /* Footer */
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        background-color: #000;
+        padding: 20px;
+    }
+
+    .footer-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+
+    .tapsi-logo {
+        color:#000;
+    }
+
+    .tapsi-logo img {
+        width: 150px;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-item .footer-item__text {
+        color: #ededed;
+        font-size: 1.2rem;
+    }
+
+    .tapsi-logo .copy-right {
+        display: none;
+    }
+
+    .footer-item__title {
+        color: var(--color-white);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-item__link {
+        text-decoration: none;
+        color: #ededed;
+        line-height: 3rem;
+        font-size: 1.4rem;
+    }
+
+    .footer-item + .footer-logo {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .footer-logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100px;
+        background-color: var(--color-white);
+        border-radius: 10px;
+        padding: 10px;
+        /* margin-left: 10px; */
+    }
+
+    .footer-social {
+        width: 100%;
+    }
+
+    .footer-social .footer-social__title {
+        display: none;
+        font-size: 1.4rem;
+        color: var(--color-white);
+    }
+
+    .footer-social .copy-right {
+        color: #bebaba;
+    }
+
+    .footer-social i {
+        font-size: 3rem;
+        color: #b6b4b4;
+        padding: 20px;
+    }
+
+    .footer-social__icon {
+        display: flex;
+        justify-content: space-around;
+    }
+
+   
+
+    @media screen and (min-width:1024px) {
+        .footer {
+            flex-direction: row;
+            padding: 100px;
+        }
+
+        .tapsi-logo .copy-right {
+            display: block;
+            text-align: right;
+            font-size: 1rem;
+            color: #bebaba
+        }
+
+        .tapsi-logo .copy-right {
+            width: 50%;
+        }
+
+        .footer-social__icon {
+            justify-content: flex-start;
+        }
+
+        .footer-social .footer-social__title {
+            display: block;
+        }
+
+        .footer-social .copy-right {
+            display: none;
+        }
+
+        .footer-logo img {
+            max-width: 120px;
+            margin-left: 10px;
         }
     }
