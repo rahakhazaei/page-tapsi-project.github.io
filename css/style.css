@@ -87,7 +87,8 @@ h3 {
     cursor: pointer;
     outline: 0;
     border: 0;
-    padding: 2rem 2.5rem;
+    /* padding: 2rem 2.5rem; */
+    padding: 1rem;
     border-radius: 8px;
     margin: 1rem 0;
     text-align: center;
@@ -134,6 +135,7 @@ h3 {
     background-color: var(--color-white);
     color: var(--color-primary-dark);
     text-transform: uppercase;
+    direction: ltr;
 }
 
 .badge--primary {
@@ -167,14 +169,14 @@ h3 {
 
 .list--tick .list__item {
     background: url(/assets/images/check-mark1.svg) no-repeat right center;
-    padding-right: 6rem;
+    padding-right: 3rem;
     margin-bottom: 1rem;
 
 }
 
 @media screen and (min-width:1024px) {
     .list--tick .list__item {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -197,7 +199,7 @@ h3 {
 
 .plan {
     background-color: var(--color-white);
-    max-width: 500px;
+    max-width: 280px;
     transition: all 0.2s ease-out;
   }
 
@@ -256,8 +258,20 @@ h3 {
 
     /* Container */
     .container {
-        max-width: 1140px;
+        max-width: 500px;
         margin: 0 auto;
+    }
+
+    @media screen and (min-width:768px) {
+        .container {
+        max-width: 600px;
+        }
+    }
+
+    @media screen and (min-width:1024px) {
+        .container {
+        max-width: 1140px;
+        }
     }
 
     /* Feature Block With Grid */
@@ -279,6 +293,7 @@ h3 {
 
     .feature__text {
         margin-bottom: 3rem;
+        color: #333;
     }
 
     .feature .btn {
@@ -341,11 +356,11 @@ h3 {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-bottom: 4rem;
     }
 
     .feature__image {
         width: 100%;
-        max-width: 400px;
         height: auto;
         margin-bottom: 3.8rem;
         margin-top: 8rem;
@@ -356,16 +371,17 @@ h3 {
         width: 100%;
     }
 
-    @media  screen and (min-width:1024px) {
+    @media  screen and (min-width:768px) {
 
         .feature{
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
         }
 
         .feature__image {
-            width: 50%;
-            margin-bottom: 0;
+            width: 40%;
+            margin: 0 10%;
         }
 
         .feature__image--order{
@@ -376,13 +392,24 @@ h3 {
             width: 50%;
         }
 
+        .feature__title {
+            font-size: 3rem;
+            text-align: right;
+            line-height: 1.5;
+        }
+    }
 
+    @media screen and (min-width:1024px) {
+        .feature {
+            margin-bottom: 17rem;
+        }
     }
     
     /* Contact Us */
 
     .contact-us {
         display: grid;
+        margin-top: 13rem;
     }
 
     .contact-us__title {
@@ -409,8 +436,8 @@ h3 {
     }   
 
     .contact-us__social-media i {
-        font-size: 35px;
-        padding: 10px;
+        font-size: 25px;
+        padding: 5px;
     }
 
     .contact-us__form {
@@ -459,7 +486,7 @@ h3 {
 
     .contact-us__form .btn {
         border-radius: 3.5rem;
-        padding: 1.8rem 3.8rem;
+        padding: 1rem 3rem;
         margin-top: 4rem;
     }
 
@@ -468,11 +495,10 @@ h3 {
         order: 2;
     }
 
-
     @media screen and (min-width:1024px) {
 
         .contact-us {
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
         }
 
         .contact-us__title {
@@ -480,7 +506,7 @@ h3 {
         }
 
         .contact-us__info {
-            grid-column: 1 / 3;
+            grid-column: 1 / 2;
             display: flex;
             flex-direction: column;
             padding: 20px;
@@ -594,7 +620,7 @@ h3 {
     }
 
     .footer-social i {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #b6b4b4;
         padding: 10px;
     }
@@ -738,6 +764,11 @@ h3 {
     }
 
     /* Header */
+    .main-header {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
 
     .nav {
         display: flex;
@@ -752,6 +783,9 @@ h3 {
     }
 
     .nav .nav-toggler {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 1rem 4rem;
     }
 
@@ -770,13 +804,16 @@ h3 {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        order:2
+        order:2;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        /* transition: all 0.4s ease-in-out; */
     }
 
     .nav-item {
         color: #545454;
         list-style: none;
-
     }
 
     .nav-item a {
@@ -796,7 +833,7 @@ h3 {
             justify-content: space-around;
         }
         
-        .nav-toggler {
+        .nav .nav-toggler {
             display: none;
         }
 
@@ -826,38 +863,33 @@ h3 {
 
     /* Navbar */
 
-    .nav-list {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: all 0.4s ease-in-out;
-    }
-
-    .nav__expanded .nav-list{
+    .nav__expanded .nav-list {
         max-height: 100%;
         opacity: 1;
         overflow: visible;
+        transition: non;
     }
 
     @media screen and (min-width:768px) {
         .nav-list { 
             max-height: 100%;
             opacity: 1;
+            transition: none;
         }
     }
 
     .bar {
-        width: 25px;
+        width: 23px;
         height: 3px;
         background-color: #1a1616;
-        margin: 5px 0;
+        margin: 2px 0;
         border-radius: 5px;
-        transition: all 0.4s ease-out;
+        transition: transform 0.4s ease-out;
     }
 
     .nav.nav__expanded .bar-one {
-        transform: rotate(-45deg) translate(-22px, 7px);
-        margin: 8px 0;
+        transform: rotate(-45deg) translate(-17px, 1px);
+        /* margin: 8px 0; */
     }
   
     .nav.nav__expanded .bar-two {
@@ -865,8 +897,8 @@ h3 {
         transform: translateX(-20px);
     }
     .nav.nav__expanded .bar-three {
-      transform: rotate(45deg) translate(-9px, 6px);
-      margin: 8px 0;
+      transform: rotate(45deg) translate(-10px, 7px);
+      /* margin: 8px 0; */
   }
   
   /* Hero Section */
@@ -892,14 +924,15 @@ h3 {
       left: 0;
       width: 100%;
       height: 100%;
+      cursor: pointer;
   }
 
   .hero-btn-content {
-      padding: 20px;
       width: 270px;
       background-image: linear-gradient(51deg,rgba(23,26,60,.7) 5%,rgba(23,26,60,.3) 95%);
       border-radius: 20px;
       color: var(--color-white);
+      padding: 16px;
       text-align: right;
   }
 
@@ -911,7 +944,7 @@ h3 {
   .hero-btn-content h2{
       color: var(--color-white);
       font-size: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
   }
 
   .hero-btns {
@@ -938,7 +971,7 @@ h3 {
       align-items: center;
       padding: 10px 15px;
       border: 1px solid var(--color-white);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       border-radius: 10px;
   }
 
@@ -968,6 +1001,10 @@ h3 {
 
 @media screen and (min-width:768px) {
 
+    .hero-wrapper {
+        margin-bottom: 220px;
+    }
+
     .hero-btn-container {
         justify-content: flex-start;
         padding: 100px;
@@ -985,15 +1022,17 @@ h3 {
 
     .hero-btn-content {
         width: 528px;
+        padding: 25px;
     }
 
     .hero-btn-content h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
+        font-size: 5rem;
+        font-weight: 700;
+        margin-bottom: 4rem;
     }
 
     .hero-btn-content h2 {
-        font-size: 2rem;
+        font-size: 2.4rem;
         font-weight: 200;
     }
 }
@@ -1011,9 +1050,13 @@ h3 {
 }
   
 /* Services */
+.services {
+    border-bottom: 1px solid var(--color-border);
+}
+
 .services__title {
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     font-weight: 700px;
 }
 
@@ -1066,12 +1109,19 @@ h3 {
 
 .tab-content .feature__image {
     display: none;
-    margin-bottom: 0;
-    margin-top: 0;
+    /* margin-bottom: 0;
+    margin-top: 0; */
+    margin: 0;
 }
 
 .tab-content .feature__title {
     margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.tab-content .feature__text {
+    color: #333;
 }
 
 
@@ -1089,4 +1139,13 @@ h3 {
     .tab-content .feature__image {
         display: block;
     }
+
+    .tab-content .feature__title {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+}
+
+.block {
+    padding: 5rem 1.5rem;
 }
