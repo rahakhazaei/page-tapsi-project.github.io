@@ -199,12 +199,15 @@ h3 {
 
 .plan {
     background-color: var(--color-white);
-    max-width: 280px;
     transition: all 0.2s ease-out;
   }
 
 .plan:hover {
     transform: scale(1.05);
+}
+
+.plan__title {
+    margin-bottom: 6rem;
 }
 
 
@@ -256,6 +259,90 @@ h3 {
       margin-bottom: 9rem;
   }
 
+/* Travel Slide */
+  .travel-slides {
+      display: grid;
+      grid-template-columns: repeat(3, 335px);
+      column-gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+  }
+
+  .travel-slides::-webkit-scrollbar {
+      display: none;
+  }
+
+  .travel-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+  }
+
+  .travel-slides .badge {
+      margin-top: 0;
+      vertical-align: middle;
+      padding: 0.1rem 1rem;
+      line-height: 1.3rem;
+  }
+
+  .travel-slide__img {
+      width: 100%;
+      height: 200px;
+  }
+
+  .travel-slide__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+
+  }
+
+  .travel-slide__description {
+      transform: translateY(-60px);
+      width: 70%;
+      background-color: var(--color-white);
+      border-radius: 32px;
+      padding: 10px 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.16);
+    }
+
+  .travel-slide__description i {
+      font-size: 5px;
+      color: #7B7B7B;
+  }
+
+  .travel-slide__description-text {
+      font-size: 12px;
+      color: #7B7B7B;
+  }
+
+  .travel-slide__description p {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .travel-slide__icons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .travel-slide__icons i {
+    font-size: 1.2rem;
+    color: #cacaca;
+    padding: 5px;
+  }
+
+  @media screen and (min-width:768px) {
+      
+   
+  }
     /* Container */
     .container {
         max-width: 500px;
@@ -409,6 +496,7 @@ h3 {
 
     .contact-us {
         display: grid;
+        justify-content: center;
         margin-top: 13rem;
     }
 
