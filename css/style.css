@@ -18,6 +18,7 @@
     --color-white:#fff;
     --color-body:333333;
     --color-border:#DDDDDD;
+    --avatar-size:50px;
 }
 
 html {
@@ -27,7 +28,7 @@ html {
 body {
     color:var(--color-body);
     font-size: 1.4rem;
-    line-height: 2.7rem;
+    line-height: 1.7rem;
     text-align: justify;
 }
 
@@ -303,7 +304,7 @@ h3 {
 
   .travel-slide__description {
       transform: translateY(-60px);
-      width: 70%;
+      width: 85%;
       background-color: var(--color-white);
       border-radius: 32px;
       padding: 10px 20px;
@@ -318,6 +319,12 @@ h3 {
   .travel-slide__description-text {
       font-size: 12px;
       color: #7B7B7B;
+  }
+
+  .travel-slide__suggest {
+      font-size: 1.2rem;
+      color: var(--color-primary-dark);
+      margin-right: 5px;
   }
 
   .travel-slide__description p {
@@ -339,10 +346,47 @@ h3 {
     padding: 5px;
   }
 
-  @media screen and (min-width:768px) {
-      
-   
+  /* Avatar */
+
+  .avatar-wrapper {
+      display: flex;
+      align-items: center;
+      padding-right: 20px;
+      margin-bottom: 1.6rem;
   }
+
+  .avatar {
+      position: relative;
+      width: var(--avatar-size);
+      height: var(--avatar-size);
+      border-radius: 100%;
+      overflow: hidden;
+      border: 3px solid var(--color-white);
+      margin-right: -20px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+  }
+
+  .avatar__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .avatar__hidden {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    border-color: var(--color-primary-light);
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+  }
+
+  .avatar:not(:last-of-type):hover {
+      transform: translateX(10px);
+  }
+
     /* Container */
     .container {
         max-width: 500px;
@@ -1236,4 +1280,125 @@ h3 {
 
 .block {
     padding: 5rem 1.5rem;
+}
+
+/* Accordion Section */
+
+.accordion-wrapper {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    border: 2px solid #ececec;
+    box-shadow: 0 9px 12px rgb(0 0 0 / 5%);
+}
+
+.accordion__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    padding: 1rem 2rem;
+}
+
+.accordion__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ececec;
+
+}
+
+
+.accordion__header .accordion__icon {
+    color: var(--color-primary-dark);
+    font-size: 20px;
+    transition: all 0.3s ease-out;
+}
+
+.accordion__info {
+    color: var(--color-primary-dark);
+}
+
+.accordion__heading {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+}
+
+.accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.accordion:not(:last-child) .accordion__text {
+    border-bottom: 1px solid #ececec;
+}
+
+.accordion.accordion__expanded .accordion__content {
+    max-height: 100%;
+    opacity: 1;
+    overflow: visible;
+    padding: 2rem 3rem;
+}
+
+.accordion.accordion__expanded .accordion__icon {
+    transform: rotate(-90deg);
+}
+
+/* Radio button Section */
+
+.select-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-control {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.select-control input[type = radio] {
+    display: none;
+}
+
+.select-control label {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 1rem 2rem;
+    border: 2px solid #ececec;
+    border-radius: 32px;
+    font-weight: 700;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.select-control label::before {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    width: 15px;
+    height: 15px;
+    box-shadow: 0 0 0 2px #ccc;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    transition: all 0.3s ease-out;
+}
+
+.select-control input[type = radio]:checked + label{
+    border-color: var(--color-primary-dark);
+    color: var(--color-primary-dark);
+}
+
+.select-control input[type = radio]:checked + label::before {
+    background-color: var(--color-primary-dark);
+   box-shadow: 0 0 0 2px var(--color-primary-dark);
+}
+
+.select-wrapper .select-control:not(:last-child) {
+    margin-left: 2rem;
 }
