@@ -169,7 +169,7 @@ h3 {
 } */
 
 .list--tick .list__item {
-    background: url(./assets/images/check-mark1.svg) no-repeat right center;
+    background: url(../assets/images/check-mark1.svg) no-repeat right center;
     padding-right: 3rem;
     margin-bottom: 1rem;
 
